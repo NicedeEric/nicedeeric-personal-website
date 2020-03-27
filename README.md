@@ -1,2 +1,2 @@
 # NicedeEric.github.io
-<h>jayking is an idiot</h>
+<p>jayking is an idiot</p>
