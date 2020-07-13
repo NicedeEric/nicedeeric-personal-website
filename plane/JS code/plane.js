@@ -172,11 +172,11 @@ window.onload = function (){
         obj.timer = setInterval(function () {
             var speed;
             if (obj.t == 1) {
-                speed = 1.5;
+                speed = 15;
             } else if (obj.t == 2) {
-                speed = 1;
+                speed = 10;
             } else if (obj.t == 3) {
-                speed = 0.5;
+                speed = 5;
             }
             var oldValue = parseFloat(getStyle(obj, attr));
             var newValue = oldValue + speed;
