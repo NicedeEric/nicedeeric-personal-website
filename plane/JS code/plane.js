@@ -184,6 +184,7 @@ window.onload = function (){
                 clearInterval(obj.timer);
                 obj.parentNode.removeChild(obj);
                 enemies.splice(0,1);
+                gameOver();
             }
             obj.style[attr] = newValue + "px";
             collision(obj);
