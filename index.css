@@ -28,10 +28,12 @@ a {
 #nav {
     position: fixed;
     margin-top: 50px;
+    margin-left: 250px;
     float: left;
     width: 300px;
-    height: 300px;
-    background-color:#fff
+    height: 30000px;
+    background-color:#fff;
+    z-index: 1;
 }
 #nav h2 {
     margin-top: 50px;
@@ -79,10 +81,13 @@ a {
     line-height: 40px;
 }
 #Education {
+    position: relative;
     width: 1200px;
     height: 800px;
+    margin: 0 auto;
 }
 #MyWork {
+    position: relative;
     width: 1200px;
     height: 1000px;
     margin: 0 auto;
@@ -181,11 +186,13 @@ a {
     cursor: pointer;
 }
 #Experience {
+    position: relative;
     width: 1200px;
     height: 800px;
     margin: 0 auto;
 }
 #Contact {
+    position: relative;
     width: 1200px;
     height: 800px;
     margin: 0 auto;
