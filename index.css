@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 400;
+}
+em {
+    font-style: normal;
+}
+a {
+    color: #999;
+    text-decoration: none;
+}
+
+#Self-Intro {
+    position: relative;
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
+#nav {
+    position: fixed;
+    margin-top: 50px;
+    float: left;
+    width: 300px;
+    height: 300px;
+    background-color:#fff
+}
+#nav h2 {
+    margin-top: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+#nav h4 {
+    margin-top: 30px;
+    text-align: center;
+}
+#nav a:hover {
+    text-decoration: underline;
+    color: #65bff4;
+}
+#navlist {
+    margin-top: 200px;
+}
+#navlist ul li {
+    width: 300px;
+    text-align: center;
+    height: 70px;
+}
+.content {
+    position: absolute;
+    left: 370px;
+}
+.content h3 {
+    margin-top: 20px;
+    display: block;
+    width: 100px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: black;
+    color: #999;
+}
+#Self-Intro .content img {
+    margin-top: 30px;
+    width: 800px;
+}
+#Self-Intro .content p {
+    width: 800px;
+    line-height: 40px;
+}
+#Education {
+    width: 1200px;
+    height: 800px;
+}
+#MyWork {
+    width: 1200px;
+    height: 1000px;
+    margin: 0 auto;
+}
+#MyWork .content ul {
+    margin-top: 30px;
+}
+#MyWork .content ul li {
+    float: left;
+    width: 120px;
+    text-align: center;
+}
+#MyWork .content ul li a:hover {
+    color: #65bff4;
+}
+#works {
+    margin-top: 100px;
+    width: 800px;
+    height: 600px;
+}
+#MyWork .content #works ul li {
+    position: relative;
+    margin-top: 50px;
+    width: 300px;
+    height: 250px;
+}
+#MyWork .content #works ul li>div {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 75px;
+    height: 50px;
+    overflow: hidden;
+}
+#MyWork .content #works ul li>div em:nth-child(1){
+    position: relative;
+    top: -20px;
+    display: block;
+    width: 75px;
+    font-size: 16px;
+    text-align: left;
+    color: #fff;
+    font-weight: 700;
+}
+#MyWork .content #works ul li>div em:nth-child(2){
+    position: relative;
+    bottom: -20px;
+    display: block;
+    width: 75px;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 400;
+}
+#MyWork .content #works ul li:nth-child(2n) {
+    width: 400px;
+    background-color: #fff
+}
+#MyWork .content #works ul li a:nth-child(1) {
+    display: block;
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 380px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #ea5f2c;
+}
+#MyWork .content #works ul li:nth-child(2n+1):hover {
+    box-shadow: 1px 10px 4px rgba(0, 0, 0, 0.4)
+}
+#MyWork .content #works ul li:nth-child(1)::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 50;
+    left: 0;
+    width: 300px;
+    height: 250px;
+    background: #ea5f2c
+}
+#MyWork .content #works ul li:nth-child(3)::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 50;
+    left: 0;
+    width: 300px;
+    height: 250px;
+    background: #2c98f0;
+}
+#MyWork .content #works ul li:nth-child(2n+1):hover::before {
+    display: block;
+    cursor: pointer;
+}
+#Experience {
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
+#Contact {
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
