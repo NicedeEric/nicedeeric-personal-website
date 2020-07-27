@@ -1,4 +1,112 @@
 window.onload = function () {
+    
+    home = document.getElementById('home')
+    SelfIntro = document.getElementById('SelfIntro')
+    Education = document.getElementById('Education')
+    MyWork = document.getElementById('MyWork')
+    Experience = document.getElementById('Experience')
+    Contact = document.getElementById('Contact')
+    titles = document.getElementsByTagName('h3')
+    for (var i = 0;i <titles.length-1;i++) {
+        console.log(getStyle(titles[i],'top'))
+    }
+    nav = document.getElementById('nav')
+    navItems = nav.getElementsByTagName('a')
+    document.onscroll = function () {
+        position = document.documentElement.scrollTop
+        if (position >=-10 && position <= 200) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==0) {
+                    navItems[i].style.color = '#65bff4'
+                    navlist[0].style.backgroundColor = '#65bff4'
+                }
+                else {
+                    navItems[i].style.color = '#999'
+                }
+            }
+        }
+        else if  (position >=900 && position <=1100) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==1) {
+                    navItems[i].style.color = '#65bff4'
+                    navlist[1].style.backgroundColor = '#65bff4'
+                }
+                else {
+                    navItems[i].style.color = '#999'
+                }
+            }
+        }
+        else if (position >= 1900 && position <= 2100) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==2) {
+                    navItems[i].style.color = '#65bff4'
+                    navlist[2].style.backgroundColor = '#65bff4'
+                }
+                else {
+                    navItems[i].style.color = '#999'
+                }
+            }
+        }
+        else if  (position >=2900 && position <= 3100) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==3) {
+                    navItems[i].style.color = '#65bff4'
+                    navlist[3].style.backgroundColor = '#65bff4'
+                }
+                else  {
+                    navItems[i].style.color = '#999'
+                }
+            }
+        }
+        else if  (position >= 3900 && position <= 4100) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==4) {
+                    navItems[i].style.color = '#65bff4';
+                    navlist[4].style.backgroundColor = '#65bff4';
+                }
+                else  {
+                    navItems[i].style.color = '#999'
+                }
+            }
+        }
+        else if (position >=4700 && position <=5000) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==5) {
+                    navItems[i].style.color = '#65bff4';
+                    navlist[5].style.backgroundColor = '#65bff4'
+                }
+                else  {
+                    navItems[i].style.color = '#999'
+                }
+            }
+        }
+    }
+
+    //nav 
+    move(nav,'marginLeft',0,4)
+    navlist = document.getElementsByClassName('underline')
+    for (var i=0;i<navItems.length;i++) {
+        navItems[i].num = i;
+        navItems[i].onmouseover = function() {
+            move(navlist[this.num],'top',0,1)
+            navlist[this.num].style.backgroundColor = '#65bff4'
+        }
+        navItems[i].onmouseout = function() {
+            move(navlist[this.num],'top',10,1)
+            navlist[this.num].style.backgroundColor = '#999'
+        }
+        navItems[i].onclick = function() {
+            this.style.color = '#65bff4'
+            scrollSlowly(20,10,1000*this.num)
+        }
+    }
+    //Home Page
+    focusImg = document.getElementById('focusImg')
+    focusTxt = document.getElementById('focusTxt')
+    move(focusImg,'left',0,2)
+    move(focusTxt,'left',0,2)
+
+    //MyWork Page
     ems = document.getElementsByTagName("em")
     work1 = document.getElementById("work1")
     work2 = document.getElementById("work2")
@@ -39,5 +147,21 @@ function move(obj, attr, target, speed, callback) {
             callback && callback();
         }
         obj.style[attr] = newValue + "px";
-    }, 10)
+    }, 15)
+}
+function scrollSlowly (speed,sec,target) {
+    clearInterval(timer);
+    var distance = window.pageYOffset
+    speed = distance <= target ? speed : -speed;
+    var timer = setInterval(function(){
+        window.scrollBy(0,speed)
+    },sec)
+
+    window.onscroll = function() {
+        var distance1 = window.pageYOffset;
+        var y = distance1 - target;
+        if (y>=-20 && y<=20) {
+            clearInterval(timer);
+        }
+    }
 }
