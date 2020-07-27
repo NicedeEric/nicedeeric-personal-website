@@ -4,6 +4,10 @@
     list-style: none;
     box-sizing: border-box;
 }
+body {
+    width: 1400px;
+    margin: 0 auto;
+}
 h1,
 h2,
 h3,
@@ -18,19 +22,142 @@ a {
     color: #999;
     text-decoration: none;
 }
-
-#Self-Intro {
+#home {
     position: relative;
     width: 1200px;
-    height: 800px;
+    height: 1000px;
+    margin: 0 auto;
+}
+#home .content div {
+    position: absolute;
+    top: 50px;
+    width: 900px;
+    height: 100px;
+    background-color: #fff;
+    opacity: 0.6;
+    overflow: hidden;
+}
+
+#home ul li:nth-child(1) {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    height: 563px;
+    width: 1000px;
+    overflow: hidden;
+    animation: caroucel 21s ease 1 alternate ;
+    animation-fill-mode: both;
+}
+@keyframes caroucel {
+    0% {
+        background: url(images/focus3.png);
+    }
+    50% {
+        background: url(images/focus2.png);
+    }
+    100% {
+        background: url(images/focus2.png);
+    }
+}
+#home ul li:nth-child(2) {
+    position: absolute;
+    top: 613px;
+    left: 200px;
+    height: 187px;
+    width: 1000px;
+    background-color: #333;
+    animation: light2 21s ease 1 alternate;
+    animation-fill-mode: both;
+}
+@keyframes light2 {
+    0% {
+        background-color: #333;
+    }
+    50% {
+        background-color: rgb(0,0,0,0.1);
+    }
+    100% {
+        background-color: rgb(0,0,0,0.1);;
+    }
+}
+#home ul li:nth-child(2) p {
+    position: absolute;
+    top: 50px;
+    width: 500px;
+    height: 50px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color:#555;
+}
+
+#home ul li:nth-child(2) p:after {
+    position: absolute;
+    width: 500px;
+    top: 0;
+    left: 0;
+    content: "I'm Eric, Welcome to my website";
+    color: transparent;
+    background: -webkit-linear-gradient(left, #c23616, #192a56, #00d2d3, yellow, #6D214F, #2e86de, #4cd137, #e84118);
+    background-clip: text;
+    -webkit-background-clip: text;
+    clip-path: circle(100px at 0% 50%);
+    -webkit-clip-path: circle(100px at 0% 50%);
+    animation-name: light;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes light {
+    0% {
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%);
+    }
+
+    50% {
+        clip-path: circle(100px at 100% 50%);
+        -webkit-clip-path: circle(100px at 100% 50%);
+    }
+
+    100% {
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%);
+    }
+}
+@keyframes example {
+    0% {
+        background-color: lightyellow;
+    }
+
+    25% {
+        background-color: lightblue;
+    }
+
+    50% {
+        background-color: lightcoral;
+
+    }
+
+    75% {
+        background-color: lightgreen;
+
+    }
+
+    100% {
+        background-color: pink;
+
+    }
+}
+#SelfIntro {
+    position: relative;
+    width: 1200px;
+    height: 1000px;
     margin: 0 auto;
 }
 #nav {
-    position: fixed;
-    margin-top: 50px;
+    position: sticky;
+    margin-left: -200px;
+    top: 0;
     float: left;
     width: 300px;
-    height: 30000px;
     background-color:#fff;
     z-index: 1;
 }
@@ -44,21 +171,36 @@ a {
     margin-top: 30px;
     text-align: center;
 }
-#nav a:hover {
-    text-decoration: underline;
-    color: #65bff4;
+#nav a:hover  {
+    /* text-decoration: underline; */
+    color: #65bff4!important;
 }
+
 #navlist {
-    margin-top: 200px;
+    margin-top: 150px;
 }
-#navlist ul li {
+#navlist ul li:nth-child(2n+1) {
     width: 300px;
     text-align: center;
+    line-height: 120px;
     height: 70px;
+}
+#navlist ul li:nth-child(2n) {
+    display: block;
+    position: relative;
+    top: 10px;
+    width: 86px;
+    height: 1px;
+    background-color: #999;
+    margin-left: 106px;
+}
+#navlist ul li a {
+    cursor: pointer;
+    font-weight: 700;
 }
 .content {
     position: absolute;
-    left: 370px;
+    left: 300px;
 }
 .content h3 {
     margin-top: 20px;
@@ -71,18 +213,18 @@ a {
     background-color: black;
     color: #999;
 }
-#Self-Intro .content img {
+#SelfIntro .content img {
     margin-top: 30px;
     width: 800px;
 }
-#Self-Intro .content p {
+#SelfIntro .content p {
     width: 800px;
     line-height: 40px;
 }
 #Education {
     position: relative;
     width: 1200px;
-    height: 800px;
+    height: 1000px;
     margin: 0 auto;
 }
 #MyWork {
@@ -187,12 +329,12 @@ a {
 #Experience {
     position: relative;
     width: 1200px;
-    height: 800px;
+    height: 1000px;
     margin: 0 auto;
 }
 #Contact {
     position: relative;
     width: 1200px;
-    height: 800px;
+    height: 1000px;
     margin: 0 auto;
 }
