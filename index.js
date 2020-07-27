@@ -14,7 +14,8 @@ window.onload = function () {
     navItems = nav.getElementsByTagName('a')
     document.onscroll = function () {
         position = document.documentElement.scrollTop
-        if (position >=-10 && position <= 200) {
+        setColor ()
+        if (position >=-10 && position < 500) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==0) {
                     navItems[i].style.color = '#65bff4'
@@ -25,7 +26,7 @@ window.onload = function () {
                 }
             }
         }
-        else if  (position >=900 && position <=1100) {
+        else if  (position >=500 && position <1500) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==1) {
                     navItems[i].style.color = '#65bff4'
@@ -36,7 +37,7 @@ window.onload = function () {
                 }
             }
         }
-        else if (position >= 1900 && position <= 2100) {
+        else if (position >= 1500 && position < 2500) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==2) {
                     navItems[i].style.color = '#65bff4'
@@ -47,7 +48,7 @@ window.onload = function () {
                 }
             }
         }
-        else if  (position >=2900 && position <= 3100) {
+        else if  (position >=2500 && position < 3500) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==3) {
                     navItems[i].style.color = '#65bff4'
@@ -58,7 +59,7 @@ window.onload = function () {
                 }
             }
         }
-        else if  (position >= 3900 && position <= 4100) {
+        else if  (position >= 3500 && position < 4500) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==4) {
                     navItems[i].style.color = '#65bff4';
@@ -69,7 +70,7 @@ window.onload = function () {
                 }
             }
         }
-        else if (position >=4700 && position <=5000) {
+        else if (position >=4500 && position <5000) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==5) {
                     navItems[i].style.color = '#65bff4';
@@ -81,7 +82,11 @@ window.onload = function () {
             }
         }
     }
-
+    function setColor() {
+        for (var i = 0;i<navlist.length;i++) {
+            navlist[i].style.backgroundColor = '#999'
+        }
+    }
     //nav 
     move(nav,'marginLeft',0,4)
     navlist = document.getElementsByClassName('underline')
