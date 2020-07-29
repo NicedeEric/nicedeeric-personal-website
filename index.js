@@ -1,5 +1,4 @@
 window.onload = function () {
-    
     home = document.getElementById('home')
     SelfIntro = document.getElementById('SelfIntro')
     Education = document.getElementById('Education')
@@ -12,8 +11,17 @@ window.onload = function () {
     }
     nav = document.getElementById('nav')
     navItems = nav.getElementsByTagName('a')
+
+    //SelfIntro Element
+    SelfText = SelfIntro.getElementsByTagName('p')[0];
+    SelfImg = SelfIntro.getElementsByTagName('img')[0];
+
+    //Contact Element
+    ContactLi = Contact.getElementsByTagName('li');
+    console.log(ContactLi)
     document.onscroll = function () {
         position = document.documentElement.scrollTop
+        console.log(position)
         setColor ()
         if (position >=-10 && position < 500) {
             for (var i=0;i<navItems.length;i++) {
@@ -36,6 +44,16 @@ window.onload = function () {
                     navItems[i].style.color = '#999'
                 }
             }
+            if (position>=750 && position <=1000) {
+                SelfImg.style.display = 'block'
+                move2(SelfImg,'left',0,1)
+                SelfText.style.display = 'block'
+                move2(SelfText,'top',550,1)
+            }
+            else if (position >=500 && position <=700) {
+                SelfImg.style.display = 'block'
+                move2(SelfImg,'left',0,1)
+            }
         }
         else if (position >= 1500 && position < 2500) {
             for (var i=0;i<navItems.length;i++) {
@@ -48,7 +66,7 @@ window.onload = function () {
                 }
             }
         }
-        else if  (position >=2500 && position < 3500) {
+        else if  (position >=2500 && position < 3200) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==3) {
                     navItems[i].style.color = '#65bff4'
@@ -59,7 +77,7 @@ window.onload = function () {
                 }
             }
         }
-        else if  (position >= 3500 && position < 4500) {
+        else if  (position >= 3200 && position < 4200) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==4) {
                     navItems[i].style.color = '#65bff4';
@@ -69,17 +87,21 @@ window.onload = function () {
                     navItems[i].style.color = '#999'
                 }
             }
-        }
-        else if (position >=4500 && position <5000) {
-            for (var i=0;i<navItems.length;i++) {
-                if (i==5) {
-                    navItems[i].style.color = '#65bff4';
-                    navlist[5].style.backgroundColor = '#65bff4'
-                }
-                else  {
-                    navItems[i].style.color = '#999'
-                }
+            if (position >=3460 && position <=3590) {
+                move2(ContactLi[0],'left',0,1)
+                move2(ContactLi[1],'left',0,1)
+                move2(ContactLi[2],'left',0,1)
             }
+            else if (position >=3330 && position <=3460) {
+                move2(ContactLi[0],'left',0,1)
+                move2(ContactLi[1],'left',0,1)
+                
+            }
+            else if (position >=3200 && position <=3330) {
+                move2(ContactLi[0],'left',0,1)
+            }
+
+
         }
     }
     function setColor() {
@@ -138,7 +160,25 @@ function getStyle(obj, name) {
         return obj.currentStyle[name];
     }
 }        
-function move(obj, attr, target, speed, callback) {
+//move to one direction and certain value
+function move(obj, attr, value, speed, callback) {
+    clearInterval(obj.timer);
+    var current = parseInt(getStyle(obj, attr));
+    if (current > value) {
+        speed = -speed;
+    }
+    obj.timer = setInterval(function () {
+        var oldValue = parseInt(getStyle(obj, attr));
+        var newValue = oldValue + speed;
+        if (Math.abs(newValue-value)<=1) {
+            clearInterval(obj.timer);
+            callback && callback();
+        }
+        obj.style[attr] = newValue + "px";
+    }, 15)
+}
+//move to a new target
+function move2(obj, attr, target, speed, callback) {
     clearInterval(obj.timer);
     var current = parseInt(getStyle(obj, attr));
     if (current > target) {
@@ -147,12 +187,15 @@ function move(obj, attr, target, speed, callback) {
     obj.timer = setInterval(function () {
         var oldValue = parseInt(getStyle(obj, attr));
         var newValue = oldValue + speed;
-        if (Math.abs(newValue-target)<=1) {
+        if ((newValue > target && speed > 0) || (newValue < target && speed < 0)) {
+            newValue = target;
+        };
+        if (newValue === target) {
             clearInterval(obj.timer);
             callback && callback();
         }
         obj.style[attr] = newValue + "px";
-    }, 15)
+    }, 1)
 }
 function scrollSlowly (speed,sec,target) {
     clearInterval(timer);
