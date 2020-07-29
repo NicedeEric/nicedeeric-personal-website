@@ -12,6 +12,24 @@ window.onload = function () {
     nav = document.getElementById('nav')
     navItems = nav.getElementsByTagName('a')
 
+    //nav 
+        move(nav,'marginLeft',0,4)
+        navlist = document.getElementsByClassName('underline')
+        for (var i=0;i<navItems.length;i++) {
+            navItems[i].num = i;
+            navItems[i].onmouseover = function() {
+                move2(navlist[this.num],'top',0,1)
+                navlist[this.num].style.backgroundColor = '#65bff4'
+            }
+            navItems[i].onmouseout = function() {
+                move2(navlist[this.num],'top',10,1)
+                navlist[this.num].style.backgroundColor = '#999'
+            }
+            navItems[i].onclick = function() {
+                this.style.color = '#65bff4'
+                scrollSlowly(20,10,1000*this.num)
+            }
+        }
     //SelfIntro Element
     SelfText = SelfIntro.getElementsByTagName('p')[0];
     SelfImg = SelfIntro.getElementsByTagName('img')[0];
@@ -27,10 +45,12 @@ window.onload = function () {
             for (var i=0;i<navItems.length;i++) {
                 if (i==0) {
                     navItems[i].style.color = '#65bff4'
-                    navlist[0].style.backgroundColor = '#65bff4'
+                    navlist[i].style.backgroundColor = '#65bff4'
+                    move2(navlist[i],'top',0,1)
                 }
                 else {
                     navItems[i].style.color = '#999'
+                    move2(navlist[i],'top',10,1)
                 }
             }
         }
@@ -39,20 +59,22 @@ window.onload = function () {
                 if (i==1) {
                     navItems[i].style.color = '#65bff4'
                     navlist[1].style.backgroundColor = '#65bff4'
+                    move2(navlist[i],'top',0,1)
                 }
                 else {
                     navItems[i].style.color = '#999'
+                    move2(navlist[i],'top',10,1)
                 }
             }
             if (position>=750 && position <=1000) {
                 SelfImg.style.display = 'block'
-                move2(SelfImg,'left',0,1)
+                move2(SelfImg,'left',0,5)
                 SelfText.style.display = 'block'
-                move2(SelfText,'top',550,1)
+                move2(SelfText,'top',550,5)
             }
             else if (position >=500 && position <=700) {
                 SelfImg.style.display = 'block'
-                move2(SelfImg,'left',0,1)
+                move2(SelfImg,'left',0,5)
             }
         }
         else if (position >= 1500 && position < 2500) {
@@ -60,9 +82,13 @@ window.onload = function () {
                 if (i==2) {
                     navItems[i].style.color = '#65bff4'
                     navlist[2].style.backgroundColor = '#65bff4'
+                    move2(navlist[i],'top',0,1)
+
                 }
                 else {
                     navItems[i].style.color = '#999'
+                    move2(navlist[i],'top',10,1)
+
                 }
             }
         }
@@ -71,9 +97,13 @@ window.onload = function () {
                 if (i==3) {
                     navItems[i].style.color = '#65bff4'
                     navlist[3].style.backgroundColor = '#65bff4'
+                    move2(navlist[i],'top',0,1)
+
                 }
                 else  {
                     navItems[i].style.color = '#999'
+                    move2(navlist[i],'top',10,1)
+
                 }
             }
         }
@@ -82,23 +112,27 @@ window.onload = function () {
                 if (i==4) {
                     navItems[i].style.color = '#65bff4';
                     navlist[4].style.backgroundColor = '#65bff4';
+                    move2(navlist[i],'top',0,1)
+
                 }
                 else  {
                     navItems[i].style.color = '#999'
+                    move2(navlist[i],'top',10,1)
+
                 }
             }
             if (position >=3460 && position <=3590) {
-                move2(ContactLi[0],'left',0,1)
-                move2(ContactLi[1],'left',0,1)
-                move2(ContactLi[2],'left',0,1)
+                move2(ContactLi[0],'left',0,5)
+                move2(ContactLi[1],'left',0,5)
+                move2(ContactLi[2],'left',0,5)
             }
             else if (position >=3330 && position <=3460) {
-                move2(ContactLi[0],'left',0,1)
-                move2(ContactLi[1],'left',0,1)
+                move2(ContactLi[0],'left',0,5)
+                move2(ContactLi[1],'left',0,5)
                 
             }
             else if (position >=3200 && position <=3330) {
-                move2(ContactLi[0],'left',0,1)
+                move2(ContactLi[0],'left',0,5)
             }
 
 
@@ -109,24 +143,7 @@ window.onload = function () {
             navlist[i].style.backgroundColor = '#999'
         }
     }
-    //nav 
-    move(nav,'marginLeft',0,4)
-    navlist = document.getElementsByClassName('underline')
-    for (var i=0;i<navItems.length;i++) {
-        navItems[i].num = i;
-        navItems[i].onmouseover = function() {
-            move(navlist[this.num],'top',0,1)
-            navlist[this.num].style.backgroundColor = '#65bff4'
-        }
-        navItems[i].onmouseout = function() {
-            move(navlist[this.num],'top',10,1)
-            navlist[this.num].style.backgroundColor = '#999'
-        }
-        navItems[i].onclick = function() {
-            this.style.color = '#65bff4'
-            scrollSlowly(20,10,1000*this.num)
-        }
-    }
+
     //Home Page
     focusImg = document.getElementById('focusImg')
     focusTxt = document.getElementById('focusTxt')
@@ -195,7 +212,7 @@ function move2(obj, attr, target, speed, callback) {
             callback && callback();
         }
         obj.style[attr] = newValue + "px";
-    }, 1)
+    }, 15)
 }
 function scrollSlowly (speed,sec,target) {
     clearInterval(timer);
