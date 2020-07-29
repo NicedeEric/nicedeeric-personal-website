@@ -220,8 +220,8 @@ a {
 #navlist ul li:nth-child(2n+1) {
     width: 300px;
     text-align: center;
-    line-height: 120px;
-    height: 70px;
+    line-height: 180px;
+    height: 100px;
 }
 #navlist ul li:nth-child(2n) {
     display: block;
