@@ -147,7 +147,7 @@ function move(obj, attr, target, speed, callback) {
     obj.timer = setInterval(function () {
         var oldValue = parseInt(getStyle(obj, attr));
         var newValue = oldValue + speed;
-        if (newValue === target) {
+        if (Math.abs(newValue-target)<=1) {
             clearInterval(obj.timer);
             callback && callback();
         }
