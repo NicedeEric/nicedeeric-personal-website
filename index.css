@@ -71,7 +71,7 @@ a {
     height: 563px;
     width: 1000px;
     overflow: hidden;
-    animation: caroucel 21s ease 1 alternate ;
+    animation: caroucel 27s ease 1 alternate ;
     animation-fill-mode: both;
 }
 @keyframes caroucel {
@@ -256,6 +256,9 @@ a {
     height: 1000px;
     margin: 0 auto;
 }
+#workNav li a {
+    color: #999;
+}
 #MyWork .content ul {
     margin-top: 30px;
 }
@@ -267,18 +270,47 @@ a {
 #MyWork .content ul li a:hover {
     color: #65bff4;
 }
+#workSection {
+    position: absolute;
+    top: 120px;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
 #works {
-    margin-top: 100px;
+    position: absolute;
+    top: 120px;
+    width: 2400px;
+    height: 600px;
+    overflow: hidden;
+}
+#works1 {
+    position: absolute;
+    left: 0;
     width: 800px;
     height: 600px;
 }
-#MyWork .content #works ul li {
+#works2 {
+    position: absolute;
+    left: 800px;
+    width: 800px;
+    height: 600px;
+    background-color: red;
+}
+#works3 {
+    position: absolute;
+    left: 1600px;
+    width: 800px;
+    height: 600px;
+    background-color: yellow;
+}
+#MyWork .content #works1 ul li {
     position: relative;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 300px;
     height: 250px;
 }
-#MyWork .content #works ul li>div {
+#MyWork .content #works1 ul li>div {
     position: absolute;
     left: 20px;
     top: 20px;
@@ -286,7 +318,7 @@ a {
     height: 50px;
     overflow: hidden;
 }
-#MyWork .content #works ul li>div em:nth-child(1){
+#MyWork .content #works1 ul li>div em:nth-child(1){
     position: relative;
     top: -20px;
     display: block;
@@ -296,7 +328,7 @@ a {
     color: #fff;
     font-weight: 700;
 }
-#MyWork .content #works ul li>div em:nth-child(2){
+#MyWork .content #works1 ul li>div em:nth-child(2){
     position: relative;
     bottom: -20px;
     display: block;
@@ -307,11 +339,11 @@ a {
     color: #fff;
     font-weight: 400;
 }
-#MyWork .content #works ul li:nth-child(2n) {
+#MyWork .content #works1 ul li:nth-child(2n) {
     width: 400px;
     background-color: #fff
 }
-#MyWork .content #works ul li a:nth-child(1) {
+#MyWork .content #works1 ul li a:nth-child(1) {
     display: block;
     margin-top: 100px;
     margin-left: 50px;
@@ -322,10 +354,10 @@ a {
     color: #fff;
     background-color: #ea5f2c;
 }
-#MyWork .content #works ul li:nth-child(2n+1):hover {
+#MyWork .content #works1 ul li:nth-child(2n+1):hover {
     box-shadow: 1px 10px 4px rgba(0, 0, 0, 0.4)
 }
-#MyWork .content #works ul li:nth-child(1)::before {
+#MyWork .content #works1 ul li:nth-child(1)::before {
     content: '';
     display: none;
     position: absolute;
@@ -335,7 +367,7 @@ a {
     height: 250px;
     background: #ea5f2c
 }
-#MyWork .content #works ul li:nth-child(3)::before {
+#MyWork .content #works1 ul li:nth-child(3)::before {
     content: '';
     display: none;
     position: absolute;
@@ -345,7 +377,7 @@ a {
     height: 250px;
     background: #2c98f0;
 }
-#MyWork .content #works ul li:nth-child(2n+1):hover::before {
+#MyWork .content #works1 ul li:nth-child(2n+1):hover::before {
     display: block;
     cursor: pointer;
 }
