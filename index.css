@@ -276,15 +276,15 @@ a {
 }
 #workSection {
     position: absolute;
+    left: 200px;
     top: 120px;
     width: 800px;
     height: 800px;
     overflow: hidden;
+    display: none;
 }
 #works {
     position: absolute;
-    display: none;
-    left: 200px;
     top: 120px;
     width: 2400px;
     height: 800px;
