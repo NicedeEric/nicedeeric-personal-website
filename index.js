@@ -1,425 +1,257 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    box-sizing: border-box;
-}
-body {
-    width: 1400px;
-    margin: 0 auto;
-}
-@font-face {
-    font-family: 'icomoon';
-    src: url('fonts1/icomoon.eot?6mdrg3');
-    src: url('fonts1/icomoon.eot?6mdrg3#iefix') format('embedded-opentype'),
-        url('fonts1/icomoon.ttf?6mdrg3') format('truetype'),
-        url('fonts1/icomoon.woff?6mdrg3') format('woff'),
-        url('fonts1/icomoon.svg?6mdrg3#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-weight: 400;
-}
-em {
-    font-style: normal;
-}
-a {
-    color: #999;
-    text-decoration: none;
-}
-.content {
-    position: absolute;
-    left: 300px;
-}
-.content h3 {
-    margin-top: 20px;
-    display: block;
-    width: 100px;
-    height: 24px;
-    line-height: 24px;
-    text-align: center;
-    border-radius: 12px;
-    background-color: black;
-    color: #999;
-}
-#home {
-    position: relative;
-    width: 1200px;
-    height: 1000px;
-    margin: 0 auto;
-}
-#home .content div {
-    position: absolute;
-    top: 50px;
-    width: 900px;
-    height: 100px;
-    background-color: #fff;
-    opacity: 0.6;
-    overflow: hidden;
-}
+window.onload = function () {
+    home = document.getElementById('home')
+    SelfIntro = document.getElementById('SelfIntro')
+    Education = document.getElementById('Education')
+    MyWork = document.getElementById('MyWork')
+    Experience = document.getElementById('Experience')
+    Contact = document.getElementById('Contact')
+    titles = document.getElementsByTagName('h3')
+    nav = document.getElementById('nav')
+    navItems = nav.getElementsByTagName('a')
+    //SelfIntro Element
+    SelfText = SelfIntro.getElementsByTagName('p')[0];
+    SelfImg = SelfIntro.getElementsByTagName('img')[0];
 
-#home ul li:nth-child(1) {
-    position: absolute;
-    top: 50px;
-    left: 100px;
-    height: 563px;
-    width: 1000px;
-    overflow: hidden;
-    animation: caroucel 27s ease 1 alternate ;
-    animation-fill-mode: both;
-}
-@keyframes caroucel {
-    0% {
-        background: url(images/focus3.png);
-    }
-    50% {
-        background: url(images/focus2.png);
-    }
-    100% {
-        background: url(images/focus2.png);
-    }
-}
-#home ul li:nth-child(2) {
-    position: absolute;
-    top: 613px;
-    left: 200px;
-    height: 187px;
-    width: 1000px;
-    background-color: #333;
-    animation: light2 21s ease 1 alternate;
-    animation-fill-mode: both;
-}
-@keyframes light2 {
-    0% {
-        background-color: #333;
-    }
-    50% {
-        background-color: rgb(0,0,0,0.1);
-    }
-    100% {
-        background-color: rgb(0,0,0,0.1);;
-    }
-}
-#home ul li:nth-child(2) p {
-    position: absolute;
-    top: 50px;
-    width: 500px;
-    height: 50px;
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    color:#555;
-}
+    //Contact Element
+    ContactLi = Contact.getElementsByTagName('li');
 
-#home ul li:nth-child(2) p:after {
-    position: absolute;
-    width: 500px;
-    top: 0;
-    left: 0;
-    content: "I'm Eric, Welcome to my website";
-    color: transparent;
-    background: -webkit-linear-gradient(left, #c23616, #192a56, #00d2d3, yellow, #6D214F, #2e86de, #4cd137, #e84118);
-    background-clip: text;
-    -webkit-background-clip: text;
-    clip-path: circle(100px at 0% 50%);
-    -webkit-clip-path: circle(100px at 0% 50%);
-    animation-name: light;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-}
-@keyframes light {
-    0% {
-        clip-path: circle(100px at 0% 50%);
-        -webkit-clip-path: circle(100px at 0% 50%);
+    document.onscroll = function () {
+        position = document.documentElement.scrollTop
+        setBackColor(navlist)
+        if (position >=-10 && position < 500) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==0) {
+                    navItems[i].style.color = '#65bff4'
+                    navlist[i].style.backgroundColor = '#65bff4'
+                    move2(navlist[i],'top',0,1)
+                }
+                else {
+                    navItems[i].style.color = '#999'
+                    move2(navlist[i],'top',10,1)
+                }
+            }
+        }
+        else if  (position >=500 && position <1500) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==1) {
+                    navItems[i].style.color = '#65bff4'
+                    navlist[1].style.backgroundColor = '#65bff4'
+                    move2(navlist[i],'top',0,1)
+                }
+                else {
+                    navItems[i].style.color = '#999'
+                    move2(navlist[i],'top',10,1)
+                }
+            }
+            if (position>=750 && position <=1000) {
+                SelfImg.style.display = 'block'
+                move2(SelfImg,'left',0,5)
+                SelfText.style.display = 'block'
+                move2(SelfText,'top',550,5)
+            }
+            else if (position >=500 && position <=700) {
+                SelfImg.style.display = 'block'
+                move2(SelfImg,'left',0,5)
+            }
+        }
+        else if (position >= 1500 && position < 2500) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==2) {
+                    move2(navlist[i],'top',0,1)
+                    navItems[i].style.color = '#65bff4'
+                    navlist[2].style.backgroundColor = '#65bff4'         
+                }
+                else {
+                    move2(navlist[i],'top',10,1)
+                    navItems[i].style.color = '#999'
+                }
+            }
+        }
+        else if  (position >=2500 && position < 3200) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==3) {
+                    move2(navlist[i],'top',0,1)
+                    navItems[i].style.color = '#65bff4'
+                    navlist[3].style.backgroundColor = '#65bff4'
+                }
+                else  {
+                    move2(navlist[i],'top',10,1)
+                    navItems[i].style.color = '#999'
+                }
+            }
+            if (position>2600 && position<=3200) {
+                WorkNav.style.display = 'block';
+                move2(WorkNav,'margin-left',0,10)
+                workSection.style.display = 'block';
+                move2(workSection,'left',0,10)
+            }
+            else if (position >=2500 && position <=2600) {
+                WorkNav.style.display = 'block';
+                move2(WorkNav,'margin-left',0,10)
+            }
+
+        }
+        else if  (position >= 3200 && position < 4200) {
+            for (var i=0;i<navItems.length;i++) {
+                if (i==4) {
+                    move2(navlist[i],'top',0,1)
+                    navItems[i].style.color = '#65bff4';
+                    navlist[4].style.backgroundColor = '#65bff4';
+                }
+                else  {
+                    move2(navlist[i],'top',10,1)
+                    navItems[i].style.color = '#999'
+                }
+            }
+            if (position >=3460 && position <=3590) {
+                move2(ContactLi[0],'left',0,5)
+                move2(ContactLi[1],'left',0,5)
+                move2(ContactLi[2],'left',0,5)
+            }
+            else if (position >=3330 && position <=3460) {
+                move2(ContactLi[0],'left',0,5)
+                move2(ContactLi[1],'left',0,5)
+                
+            }
+            else if (position >=3200 && position <=3330) {
+                move2(ContactLi[0],'left',0,5)
+            }
+
+
+        }
     }
-
-    50% {
-        clip-path: circle(100px at 100% 50%);
-        -webkit-clip-path: circle(100px at 100% 50%);
+    function setBackColor(obj) {
+        for (var i = 0;i<obj.length;i++) {
+            obj[i].style.backgroundColor = '#999'
+        }
     }
+    function setColor(obj) {
+        for (var i = 0;i<obj.length;i++) {
+            obj[i].style.color = '#999'
+        }
+    }
+    //nav page
+    move(nav,'marginLeft',0,4)
+    navlist = document.getElementsByClassName('underline')
+    for (var i=0;i<navItems.length;i++) {
+        navItems[i].num = i;
+        navItems[i].onmouseover = function() {
+            move2(navlist[this.num],'top',0,1)
+            navlist[this.num].style.backgroundColor = '#65bff4'
+        }
+        navItems[i].onmouseout = function() {
+            move2(navlist[this.num],'top',10,1)
+            navlist[this.num].style.backgroundColor = '#999'
+        }
+        navItems[i].onclick = function() {
+            this.style.color = '#65bff4'
+            scrollSlowly(20,10,1000*this.num)
+        }
+    }
+    //Home Page
+    focusImg = document.getElementById('focusImg')
+    focusTxt = document.getElementById('focusTxt')
+    move(focusImg,'left',0,2)
+    move(focusTxt,'left',0,2)
 
-    100% {
-        clip-path: circle(100px at 0% 50%);
-        -webkit-clip-path: circle(100px at 0% 50%);
+    //MyWork Page
+
+    //MyWork Element
+    WorkNav = document.getElementById('workNav');
+    workSection = document.getElementById('workSection')
+    WorkNavList = WorkNav.getElementsByTagName('li');
+    WorkNavA = WorkNav.getElementsByTagName('a');
+    works = document.getElementById('works');
+    works1 = document.getElementById('works1');
+    works2 = document.getElementById('works2');
+    works3 = document.getElementById('works3');
+
+    ems = document.getElementsByTagName("em")
+    work1 = document.getElementById("work1")
+    work2 = document.getElementById("work2")
+    work1.onmouseover = function () {
+        move(ems[0],'top',0,1)
+        move(ems[1],'bottom',0,1)
+    }
+    work1.onmouseout = function () {
+        move(ems[0],'top',-20,1)
+        move(ems[1],'bottom',-20,1)
+    }
+    work2.onmouseover = function () {
+        move(ems[2],'top',0,1)
+        move(ems[3],'bottom',0,1)
+    }
+    work2.onmouseout = function () {
+        move(ems[2],'top',-20,1)
+        move(ems[3],'bottom',-20,1)
+    }
+    for(var i=0;i<WorkNavList.length;i++) {
+        WorkNavList[i].num = i;
+        WorkNavList[i].onmouseover = function () {
+            setColor(WorkNavA)
+            move2(works,'left',-800*this.num,20)
+            WorkNavA[this.num].style.color = '#65bff4';
+        }
     }
 }
-@keyframes example {
-    0% {
-        background-color: lightyellow;
+//get html element css style
+function getStyle(obj, name) {
+    if (window.getComputedStyle) {
+        return getComputedStyle(obj, null)[name];
+        return obj.currentStyle[name];
     }
-
-    25% {
-        background-color: lightblue;
+}        
+//move to one direction and certain value
+function move(obj, attr, value, speed, callback) {
+    clearInterval(obj.timer);
+    var current = parseInt(getStyle(obj, attr));
+    if (current > value) {
+        speed = -speed;
     }
-
-    50% {
-        background-color: lightcoral;
-
+    obj.timer = setInterval(function () {
+        var oldValue = parseInt(getStyle(obj, attr));
+        var newValue = oldValue + speed;
+        if (Math.abs(newValue-value)<=1) {
+            clearInterval(obj.timer);
+            callback && callback();
+        }
+        obj.style[attr] = newValue + "px";
+    }, 15)
+}
+//move to a new target
+function move2(obj, attr, target, speed, callback) {
+    clearInterval(obj.timer);
+    var current = parseInt(getStyle(obj, attr));
+    if (current > target) {
+        speed = -speed;
     }
+    obj.timer = setInterval(function () {
+        var oldValue = parseInt(getStyle(obj, attr));
+        var newValue = oldValue + speed;
+        if ((newValue > target && speed > 0) || (newValue < target && speed < 0)) {
+            newValue = target;
+        };
+        if (newValue === target) {
+            clearInterval(obj.timer);
+            callback && callback();
+        }
+        obj.style[attr] = newValue + "px";
+    }, 15)
+}
+//make element scroll slowly
+function scrollSlowly (speed,sec,target) {
+    clearInterval(timer);
+    var distance = window.pageYOffset
+    speed = distance <= target ? speed : -speed;
+    var timer = setInterval(function(){
+        window.scrollBy(0,speed)
+    },sec)
 
-    75% {
-        background-color: lightgreen;
-
+    window.onscroll = function() {
+        var distance1 = window.pageYOffset;
+        var y = distance1 - target;
+        if (y>=-20 && y<=20) {
+            clearInterval(timer);
+        }
     }
-
-    100% {
-        background-color: pink;
-
-    }
-}
-#SelfIntro {
-    position: relative;
-    width: 1200px;
-    height: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-#SelfIntro img {
-    position: absolute;
-    top: 50px;
-    left: 200px;
-    display: none;
-}
-#SelfIntro p {
-    position: absolute;
-    top: 800px;
-    display: none;
-}
-#nav {
-    position: sticky;
-    margin-left: -200px;
-    top: 0;
-    float: left;
-    width: 300px;
-    background-color:#fff;
-    z-index: 1;
-}
-#nav h2 {
-    margin-top: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-}
-#nav h4 {
-    margin-top: 30px;
-    text-align: center;
-}
-#nav a:hover  {
-    /* text-decoration: underline; */
-    color: #65bff4!important;
-}
-
-#navlist {
-    margin-top: 150px;
-}
-#navlist ul li:nth-child(2n+1) {
-    width: 300px;
-    text-align: center;
-    line-height: 180px;
-    height: 100px;
-}
-#navlist ul li:nth-child(2n) {
-    display: block;
-    position: relative;
-    top: 10px;
-    width: 86px;
-    height: 1px;
-    background-color: #999;
-    margin-left: 106px;
-}
-#navlist ul li a {
-    cursor: pointer;
-    font-weight: 700;
-}
-#SelfIntro .content img {
-    margin-top: 30px;
-    width: 800px;
-}
-#SelfIntro .content p {
-    width: 800px;
-    line-height: 40px;
-}
-#Skills {
-    position: relative;
-    width: 1200px;
-    height: 1000px;
-    margin: 0 auto;
-}
-#MyWork {
-    position: relative;
-    width: 1200px;
-    height: 1000px;
-    margin: 0 auto;
-}
-#workNav {
-    margin-left: -300px;
-    display: none;
-}
-#workNav li a {
-    color: #999;
-}
-#MyWork .content ul {
-    margin-top: 30px;
-}
-#MyWork .content ul li {
-    float: left;
-    width: 120px;
-    text-align: center;
-}
-#MyWork .content ul li a:hover {
-    color: #65bff4;
-}
-#workSection {
-    position: absolute;
-    left: 200px;
-    top: 120px;
-    width: 800px;
-    height: 800px;
-    overflow: hidden;
-    display: none;
-}
-#works {
-    position: absolute;
-    top: 120px;
-    width: 2400px;
-    height: 800px;
-    overflow: hidden;
-}
-#works1 {
-    position: absolute;
-    left: 0;
-    width: 800px;
-    height: 800px;
-}
-#works2 {
-    position: absolute;
-    left: 800px;
-    width: 800px;
-    height: 800px;
-    background-color: red;
-}
-#works3 {
-    position: absolute;
-    left: 1600px;
-    width: 800px;
-    height: 800px;
-    background-color: yellow;
-}
-#MyWork .content #works1 ul li {
-    position: relative;
-    margin-top: 20px;
-    width: 300px;
-    height: 250px;
-}
-#MyWork .content #works1 ul li>div {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    width: 75px;
-    height: 50px;
-    overflow: hidden;
-}
-#MyWork .content #works1 ul li>div em:nth-child(1){
-    position: relative;
-    top: -20px;
-    display: block;
-    width: 75px;
-    font-size: 16px;
-    text-align: left;
-    color: #fff;
-    font-weight: 700;
-}
-#MyWork .content #works1 ul li>div em:nth-child(2){
-    position: relative;
-    bottom: -20px;
-    display: block;
-    width: 75px;
-    font-size: 14px;
-    text-align: left;
-    margin-top: 10px;
-    color: #fff;
-    font-weight: 400;
-}
-#MyWork .content #works1 ul li:nth-child(2n) {
-    width: 400px;
-    background-color: #fff
-}
-#MyWork .content #works1 ul li a:nth-child(1) {
-    display: block;
-    margin-top: 100px;
-    margin-left: 50px;
-    width: 380px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    color: #fff;
-    background-color: #ea5f2c;
-}
-#MyWork .content #works1 ul li:nth-child(2n+1):hover {
-    box-shadow: 1px 10px 4px rgba(0, 0, 0, 0.4)
-}
-#MyWork .content #works1 ul li:nth-child(1)::before {
-    content: '';
-    display: none;
-    position: absolute;
-    top: 50;
-    left: 0;
-    width: 300px;
-    height: 250px;
-    background: #ea5f2c
-}
-#MyWork .content #works1 ul li:nth-child(3)::before {
-    content: '';
-    display: none;
-    position: absolute;
-    top: 50;
-    left: 0;
-    width: 300px;
-    height: 250px;
-    background: #2c98f0;
-}
-#MyWork .content #works1 ul li:nth-child(2n+1):hover::before {
-    display: block;
-    cursor: pointer;
-}
-#Experience {
-    position: relative;
-    width: 1200px;
-    height: 1000px;
-    margin: 0 auto;
-}
-#Contact {
-    position: relative;
-    width: 1200px;
-    height: 500px;
-    margin: 0 auto;
-}
-#Contact ul {
-    position: absolute;
-    top:50px;
-    width: 400px;
-    height: 500px;
-    overflow: hidden;
-}
-#Contact ul li {
-    position: absolute;
-    left: 150px;
-    width: 400px;
-    height: 130px;
-    line-height: 130px;
-    font-size: 24px;
-}
-#Contact ul li span:nth-child(1) {
-    font-family: 'icomoon';
-    font-size: 30px;
-}
-#Contact ul li span:nth-child(2) {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    margin-left: 30px;
 }
