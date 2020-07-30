@@ -6,41 +6,18 @@ window.onload = function () {
     Experience = document.getElementById('Experience')
     Contact = document.getElementById('Contact')
     titles = document.getElementsByTagName('h3')
-    for (var i = 0;i <titles.length-1;i++) {
-        console.log(getStyle(titles[i],'top'))
-    }
     nav = document.getElementById('nav')
     navItems = nav.getElementsByTagName('a')
-
-    //nav 
-        move(nav,'marginLeft',0,4)
-        navlist = document.getElementsByClassName('underline')
-        for (var i=0;i<navItems.length;i++) {
-            navItems[i].num = i;
-            navItems[i].onmouseover = function() {
-                move2(navlist[this.num],'top',0,1)
-                navlist[this.num].style.backgroundColor = '#65bff4'
-            }
-            navItems[i].onmouseout = function() {
-                move2(navlist[this.num],'top',10,1)
-                navlist[this.num].style.backgroundColor = '#999'
-            }
-            navItems[i].onclick = function() {
-                this.style.color = '#65bff4'
-                scrollSlowly(20,10,1000*this.num)
-            }
-        }
     //SelfIntro Element
     SelfText = SelfIntro.getElementsByTagName('p')[0];
     SelfImg = SelfIntro.getElementsByTagName('img')[0];
 
     //Contact Element
     ContactLi = Contact.getElementsByTagName('li');
-    console.log(ContactLi)
+
     document.onscroll = function () {
         position = document.documentElement.scrollTop
-        console.log(position)
-        setColor ()
+        setBackColor(navlist)
         if (position >=-10 && position < 500) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==0) {
@@ -80,45 +57,39 @@ window.onload = function () {
         else if (position >= 1500 && position < 2500) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==2) {
-                    navItems[i].style.color = '#65bff4'
-                    navlist[2].style.backgroundColor = '#65bff4'
                     move2(navlist[i],'top',0,1)
-
+                    navItems[i].style.color = '#65bff4'
+                    navlist[2].style.backgroundColor = '#65bff4'         
                 }
                 else {
-                    navItems[i].style.color = '#999'
                     move2(navlist[i],'top',10,1)
-
+                    navItems[i].style.color = '#999'
                 }
             }
         }
         else if  (position >=2500 && position < 3200) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==3) {
+                    move2(navlist[i],'top',0,1)
                     navItems[i].style.color = '#65bff4'
                     navlist[3].style.backgroundColor = '#65bff4'
-                    move2(navlist[i],'top',0,1)
-
                 }
                 else  {
-                    navItems[i].style.color = '#999'
                     move2(navlist[i],'top',10,1)
-
+                    navItems[i].style.color = '#999'
                 }
             }
         }
         else if  (position >= 3200 && position < 4200) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==4) {
+                    move2(navlist[i],'top',0,1)
                     navItems[i].style.color = '#65bff4';
                     navlist[4].style.backgroundColor = '#65bff4';
-                    move2(navlist[i],'top',0,1)
-
                 }
                 else  {
-                    navItems[i].style.color = '#999'
                     move2(navlist[i],'top',10,1)
-
+                    navItems[i].style.color = '#999'
                 }
             }
             if (position >=3460 && position <=3590) {
@@ -138,12 +109,34 @@ window.onload = function () {
 
         }
     }
-    function setColor() {
-        for (var i = 0;i<navlist.length;i++) {
-            navlist[i].style.backgroundColor = '#999'
+    function setBackColor(obj) {
+        for (var i = 0;i<obj.length;i++) {
+            obj[i].style.backgroundColor = '#999'
         }
     }
-
+    function setColor(obj) {
+        for (var i = 0;i<obj.length;i++) {
+            obj[i].style.color = '#999'
+        }
+    }
+    //nav page
+    move(nav,'marginLeft',0,4)
+    navlist = document.getElementsByClassName('underline')
+    for (var i=0;i<navItems.length;i++) {
+        navItems[i].num = i;
+        navItems[i].onmouseover = function() {
+            move2(navlist[this.num],'top',0,1)
+            navlist[this.num].style.backgroundColor = '#65bff4'
+        }
+        navItems[i].onmouseout = function() {
+            move2(navlist[this.num],'top',10,1)
+            navlist[this.num].style.backgroundColor = '#999'
+        }
+        navItems[i].onclick = function() {
+            this.style.color = '#65bff4'
+            scrollSlowly(20,10,1000*this.num)
+        }
+    }
     //Home Page
     focusImg = document.getElementById('focusImg')
     focusTxt = document.getElementById('focusTxt')
@@ -151,6 +144,16 @@ window.onload = function () {
     move(focusTxt,'left',0,2)
 
     //MyWork Page
+
+    //MyWork Element
+    WorkNav = document.getElementById('workNav');
+    WorkNavList = WorkNav.getElementsByTagName('li');
+    WorkNavA = WorkNav.getElementsByTagName('a');
+    works = document.getElementById('works');
+    works1 = document.getElementById('works1');
+    works2 = document.getElementById('works2');
+    works3 = document.getElementById('works3');
+
     ems = document.getElementsByTagName("em")
     work1 = document.getElementById("work1")
     work2 = document.getElementById("work2")
@@ -170,7 +173,16 @@ window.onload = function () {
         move(ems[2],'top',-20,1)
         move(ems[3],'bottom',-20,1)
     }
+    for(var i=0;i<WorkNavList.length;i++) {
+        WorkNavList[i].num = i;
+        WorkNavList[i].onmouseover = function () {
+            setColor(WorkNavA)
+            move2(works,'left',-800*this.num,20)
+            WorkNavA[this.num].style.color = '#65bff4';
+        }
+    }
 }
+//get html element css style
 function getStyle(obj, name) {
     if (window.getComputedStyle) {
         return getComputedStyle(obj, null)[name];
@@ -214,6 +226,7 @@ function move2(obj, attr, target, speed, callback) {
         obj.style[attr] = newValue + "px";
     }, 15)
 }
+//make element scroll slowly
 function scrollSlowly (speed,sec,target) {
     clearInterval(timer);
     var distance = window.pageYOffset
