@@ -79,6 +79,17 @@ window.onload = function () {
                     navItems[i].style.color = '#999'
                 }
             }
+            if (position>2600 && position<=3200) {
+                WorkNav.style.display = 'block';
+                move2(WorkNav,'margin-left',0,10)
+                works.style.display = 'block';
+                move2(works,'left',0,10)
+            }
+            else if (position >=2500 && position <=2600) {
+                WorkNav.style.display = 'block';
+                move2(WorkNav,'margin-left',0,10)
+            }
+
         }
         else if  (position >= 3200 && position < 4200) {
             for (var i=0;i<navItems.length;i++) {
