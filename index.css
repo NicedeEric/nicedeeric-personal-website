@@ -256,6 +256,10 @@ a {
     height: 1000px;
     margin: 0 auto;
 }
+#workNav {
+    margin-left: -300px;
+    display: none;
+}
 #workNav li a {
     color: #999;
 }
@@ -274,34 +278,36 @@ a {
     position: absolute;
     top: 120px;
     width: 800px;
-    height: 600px;
+    height: 800px;
     overflow: hidden;
 }
 #works {
     position: absolute;
+    display: none;
+    left: 200px;
     top: 120px;
     width: 2400px;
-    height: 600px;
+    height: 800px;
     overflow: hidden;
 }
 #works1 {
     position: absolute;
     left: 0;
     width: 800px;
-    height: 600px;
+    height: 800px;
 }
 #works2 {
     position: absolute;
     left: 800px;
     width: 800px;
-    height: 600px;
+    height: 800px;
     background-color: red;
 }
 #works3 {
     position: absolute;
     left: 1600px;
     width: 800px;
-    height: 600px;
+    height: 800px;
     background-color: yellow;
 }
 #MyWork .content #works1 ul li {
