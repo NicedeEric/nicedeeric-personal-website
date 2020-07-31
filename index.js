@@ -185,6 +185,14 @@ window.onload = function () {
         move(ems[2],'top',-20,1)
         move(ems[3],'bottom',-20,1)
     }
+    work3.onmouseover = function () {
+        move(ems[4],'top',0,1)
+        move(ems[5],'bottom',0,1)
+    }
+    work3.onmouseout = function () {
+        move(ems[4],'top',-20,1)
+        move(ems[5],'bottom',-20,1)
+    }
     for(var i=0;i<WorkNavList.length;i++) {
         WorkNavList[i].num = i;
         WorkNavList[i].onmouseover = function () {
