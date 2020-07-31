@@ -296,20 +296,6 @@ a {
     width: 800px;
     height: 800px;
 }
-#works2 {
-    position: absolute;
-    left: 800px;
-    width: 800px;
-    height: 800px;
-    background-color: red;
-}
-#works3 {
-    position: absolute;
-    left: 1600px;
-    width: 800px;
-    height: 800px;
-    background-color: yellow;
-}
 #MyWork .content #works1 ul li {
     position: relative;
     margin-top: 20px;
@@ -322,6 +308,7 @@ a {
     top: 20px;
     width: 75px;
     height: 50px;
+    font-size: 16px;
     overflow: hidden;
 }
 #MyWork .content #works1 ul li>div em:nth-child(1){
@@ -385,7 +372,87 @@ a {
 }
 #MyWork .content #works1 ul li:nth-child(2n+1):hover::before {
     display: block;
-    cursor: pointer;
+}
+#works2 {
+    position: absolute;
+    left: 800px;
+    width: 800px;
+    height: 800px;
+}
+#MyWork .content #works2 div:nth-child(1){
+    position: absolute;
+    width: 300px;
+    height: 530px;
+    top: 70px;
+    color:#fff;
+    overflow: hidden;
+}
+#MyWork .content #works2 div:nth-child(2) {
+    position: absolute;
+    text-align: center;
+    top: 250px;
+    left: 400px;
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #5b8a9a;
+}
+#MyWork .content #works2 div:nth-child(2) a {
+    color: #fff;
+}
+#MyWork .content #works2 img:hover {
+    box-shadow: 1px 10px 4px rgba(0, 0, 0, 0.4)
+}
+#MyWork .content #works2 div:nth-child(1)::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 530px;
+    background-color: #5b8a9a;
+    overflow: hidden;
+}
+#MyWork .content #works2 div:nth-child(1):hover::before {
+    display: block;
+}
+#MyWork .content #works2 div:nth-child(1) div{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+}
+#MyWork .content #works2 div:nth-child(1) div em:nth-child(1) {
+    position: relative;
+    top: -20px;
+    display: block;
+    width: 100px;
+    font-size: 16px;
+    text-align: left;
+    color: #fff;
+    font-weight: 700;
+}
+#MyWork .content #works2 div:nth-child(1) div em:nth-child(2) {
+    position: relative;
+    bottom: -20px;
+    display: block;
+    width: 200px;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 400;
+}
+#works3 {
+    position: absolute;
+    left: 1600px;
+    width: 800px;
+    height: 800px;
+    background-color: yellow;
 }
 #Experience {
     position: relative;
