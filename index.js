@@ -151,6 +151,9 @@ window.onload = function () {
             if (this.num ==3) {
                 scrollSlowly(20,10,2700)
             }
+            else if (this.num == 4) {
+                scrollSlowly(20,10,3230)
+            }
             else {
                 scrollSlowly(20,10,1000*this.num)
             }    
