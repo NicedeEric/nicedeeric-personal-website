@@ -147,8 +147,13 @@ window.onload = function () {
             navlist[this.num].style.backgroundColor = '#999'
         }
         navItems[i].onclick = function() {
-            this.style.color = '#65bff4'
-            scrollSlowly(20,10,900*this.num)
+            this.style.color = '#65bff4' 
+            if (this.num ==3) {
+                scrollSlowly(20,10,2700)
+            }
+            else {
+                scrollSlowly(20,10,1000*this.num)
+            }    
         }
     }
     //Skills page
