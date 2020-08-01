@@ -247,8 +247,74 @@ a {
 #Skills {
     position: relative;
     width: 1200px;
-    height: 1000px;
+    height: 700px;
     margin: 0 auto;
+}
+#Skills .content ul {
+    position: absolute;
+    top: 100px;
+}
+#Skills .content ul li {
+    width: 500px;
+    height: 100px;
+    line-height: 70px;
+    margin-top: 20px;
+    display: none;
+}
+#Skills .content ul li div {
+    float: left;
+}
+#Skills .content ul li div span {
+    float: right;
+    margin-top: -17px;
+    font-size: 12px;
+}
+#Skills .content ul li div:nth-child(1) {
+    float: left;
+    width: 500px;
+    height: 70px;
+}
+#Skills .content ul li div:nth-child(2) {
+    float: left;
+    height: 8px;
+    background-color: red;
+    border-radius: 4px;
+}
+#Skills .content ul li div:nth-child(3) {
+    margin-left: -3px;
+    margin-top: -2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: red;
+}
+#Skills .content ul li:nth-child(1) div:nth-child(2),
+#Skills .content ul li:nth-child(1) div:nth-child(3) {
+    background-color: #f9bf40;
+}
+#Skills .content ul li:nth-child(1) span {
+    color:#f9bf40;
+}
+#Skills .content ul li:nth-child(2) div:nth-child(2),
+#Skills .content ul li:nth-child(2) div:nth-child(3) {
+    background-color: #a84db8;
+}
+#Skills .content ul li:nth-child(2) span {
+    color:#a84db8;
+}
+#Skills .content ul li:nth-child(3) div:nth-child(2),
+#Skills .content ul li:nth-child(3) div:nth-child(3) {
+    background-color: #ec5554;
+}
+#Skills .content ul li:nth-child(3) span {
+    color:#ec5554;
+}
+#Skills .content ul li:nth-child(4) div:nth-child(2),
+#Skills .content ul li:nth-child(4) div:nth-child(3) {
+    background-color: #2d98f0;
+}
+#Skills .content ul li:nth-child(4) span {
+    color:#2d98f0;
 }
 #MyWork {
     position: relative;
@@ -272,7 +338,7 @@ a {
     text-align: center;
 }
 #MyWork .content ul li a:hover {
-    color: #65bff4;
+    color: #65bff4!important;
 }
 #workSection {
     position: absolute;
