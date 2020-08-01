@@ -148,7 +148,7 @@ window.onload = function () {
         }
         navItems[i].onclick = function() {
             this.style.color = '#65bff4'
-            scrollSlowly(20,10,1000*this.num)
+            scrollSlowly(20,10,900*this.num)
         }
     }
     //Skills page
