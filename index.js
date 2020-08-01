@@ -1,7 +1,7 @@
 window.onload = function () {
     home = document.getElementById('home')
     SelfIntro = document.getElementById('SelfIntro')
-    Education = document.getElementById('Education')
+    Skills = document.getElementById('Skills')
     MyWork = document.getElementById('MyWork')
     Experience = document.getElementById('Experience')
     Contact = document.getElementById('Contact')
@@ -47,14 +47,15 @@ window.onload = function () {
                 SelfImg.style.display = 'block'
                 move2(SelfImg,'left',0,5)
                 SelfText.style.display = 'block'
-                move2(SelfText,'top',550,5)
+                move2(SelfText,'top',600,5)
             }
             else if (position >=500 && position <=700) {
                 SelfImg.style.display = 'block'
                 move2(SelfImg,'left',0,5)
             }
         }
-        else if (position >= 1500 && position < 2500) {
+        
+        else if (position >= 1500 && position < 2200) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==2) {
                     move2(navlist[i],'top',0,1)
@@ -66,8 +67,12 @@ window.onload = function () {
                     navItems[i].style.color = '#999'
                 }
             }
+            for(var i=0;i<SkillsLis.length;i++) {
+                SkillsLis[i].style.display = 'block'
+                move2(SkillsLis[i],'margin-left',0,5)
+            }
         }
-        else if  (position >=2500 && position < 3200) {
+        else if  (position >=2200 && position < 2900) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==3) {
                     move2(navlist[i],'top',0,1)
@@ -79,19 +84,19 @@ window.onload = function () {
                     navItems[i].style.color = '#999'
                 }
             }
-            if (position>2600 && position<=3200) {
+            if (position>2300 && position<=2900) {
                 WorkNav.style.display = 'block';
                 move2(WorkNav,'margin-left',0,10)
                 workSection.style.display = 'block';
                 move2(workSection,'left',0,10)
             }
-            else if (position >=2500 && position <=2600) {
+            else if (position >=2200 && position <=2300) {
                 WorkNav.style.display = 'block';
                 move2(WorkNav,'margin-left',0,10)
             }
 
         }
-        else if  (position >= 3200 && position < 4200) {
+        else if  (position >= 2900 && position < 3900) {
             for (var i=0;i<navItems.length;i++) {
                 if (i==4) {
                     move2(navlist[i],'top',0,1)
@@ -103,21 +108,19 @@ window.onload = function () {
                     navItems[i].style.color = '#999'
                 }
             }
-            if (position >=3460 && position <=3590) {
+            if (position >=3160 && position <=3290) {
                 move2(ContactLi[0],'left',0,5)
                 move2(ContactLi[1],'left',0,5)
                 move2(ContactLi[2],'left',0,5)
             }
-            else if (position >=3330 && position <=3460) {
+            else if (position >=3030 && position <=3160) {
                 move2(ContactLi[0],'left',0,5)
                 move2(ContactLi[1],'left',0,5)
                 
             }
-            else if (position >=3200 && position <=3330) {
+            else if (position >=2900 && position <=3030) {
                 move2(ContactLi[0],'left',0,5)
             }
-
-
         }
     }
     function setBackColor(obj) {
@@ -148,6 +151,9 @@ window.onload = function () {
             scrollSlowly(20,10,1000*this.num)
         }
     }
+    //Skills page
+    SkillsLis = Skills.getElementsByTagName('li')
+
     //Home Page
     focusImg = document.getElementById('focusImg')
     focusTxt = document.getElementById('focusTxt')
@@ -155,7 +161,6 @@ window.onload = function () {
     move(focusTxt,'left',0,2)
 
     //MyWork Page
-
     //MyWork Element
     WorkNav = document.getElementById('workNav');
     workSection = document.getElementById('workSection')
@@ -195,7 +200,7 @@ window.onload = function () {
     }
     for(var i=0;i<WorkNavList.length;i++) {
         WorkNavList[i].num = i;
-        WorkNavList[i].onmouseover = function () {
+        WorkNavList[i].onclick = function () {
             setColor(WorkNavA)
             move2(works,'left',-800*this.num,20)
             WorkNavA[this.num].style.color = '#65bff4';
