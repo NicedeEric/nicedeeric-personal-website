@@ -3,17 +3,18 @@
 # You can view some of my works in my webiste under "My Work" section
 # Website URL "nicedeEric.github.io"
 
-<br/><br/>
+Code for those projects
+<br/>
 /shopping
 <br>
 A ecommerce website frontend webpage
 
-<br/><br/>
+<br/>
 /plane
 <br>
 A JS little game
 
-<br/><br/>
+<br/>
 /学成网案例
 <br>
 A educational learning website frontend webpage
