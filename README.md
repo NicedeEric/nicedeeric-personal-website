@@ -7,7 +7,6 @@ This repo contains some of my works in JS, CSS3 and HTML5 and a practice project
 
 <br>
 /shopping
-
 <br>
 A ecommerce website frontend webpage
 
