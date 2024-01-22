@@ -2,7 +2,7 @@
 Website Project and front-end projects
 
 ## You can view some of my works in my webiste under "My Work" section
-## Website URL "nicedeEric.github.io"
+## Website URL "nicedeeric.github.io"
 
 Code for those projects
 <br/><br/>
