@@ -1,9 +1,7 @@
 # This is Eric Ding
-# My first website URL "nicedeEric.github.io"
+# This repo is a practice project to build a webiste and it contains some of my works in JS, CSS3 and HTML5.
 # You can view some of my works in my webiste under "My Work" section
-
-<br/><br/>
-This repo contains some of my works in JS, CSS3 and HTML5 and a practice project to build a webiste.
+# Website URL "nicedeEric.github.io"
 
 <br/><br/>
 /shopping
