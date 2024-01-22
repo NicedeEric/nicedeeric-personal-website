@@ -108,19 +108,19 @@ window.onload = function () {
                     navItems[i].style.color = '#999'
                 }
             }
-            if (position >=3160 && position <=3290) {
+            if (position >=2900) {
                 move2(ContactLi[0],'left',0,5)
                 move2(ContactLi[1],'left',0,5)
                 move2(ContactLi[2],'left',0,5)
             }
-            else if (position >=3030 && position <=3160) {
+            /* else if (position >=3030 && position <=3160) {
                 move2(ContactLi[0],'left',0,5)
                 move2(ContactLi[1],'left',0,5)
                 
             }
             else if (position >=2900 && position <=3030) {
                 move2(ContactLi[0],'left',0,5)
-            }
+            }*/
         }
     }
     function setBackColor(obj) {
