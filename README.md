@@ -1,7 +1,8 @@
-# This is Eric Ding
 # This repo is a practice project to build a webiste and it contains some of my works in JS, CSS3 and HTML5.
-# You can view some of my works in my webiste under "My Work" section
-# Website URL "nicedeEric.github.io"
+Website Project and front-end projects
+
+##You can view some of my works in my webiste under "My Work" section
+##Website URL "nicedeEric.github.io"
 
 Code for those projects
 <br/><br/>
